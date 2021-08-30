@@ -31,7 +31,7 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 
 #### Cell Rules
 
-- [] Setup a cell state object with DEAD or ALIVE properties
+- [x] Setup a cell state object with DEAD or ALIVE properties
 - [] Setup a cell class
   - [] Live cells with fewer than 2 live neighbors should die
   - [] Live cells with 2 or 3 live neighbors should stay alive
