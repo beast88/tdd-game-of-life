@@ -20,13 +20,12 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 
 - [x] Initialise a new node project
 - [x] Install dev dependencies
-  - [x] mocha chai typescript eslint
+  - [x] mocha @types/mocha chai @types/chai typescript ts-node eslint
 - [x] Setup tsconfig.json
-  - [x] { "compilerOptions": {"target": "es6"} }
 - [x] Setup eslint
   - [x] eslint --init
 - [x] Setup testing script
-  - [x] "tests": "mocha"
+  - [x] "tests": "mocha -r tsnode/register 'tests/\**/*ts' || true"
 - [x] Setup github repository
   - [x] Setup .gitignore
 
