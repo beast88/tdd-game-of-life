@@ -13,6 +13,8 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 ### Technologies
 
 - Typescript
+- Mocha - testing suite
+- Chai - assertion library
 
 ### Tasks
 
@@ -25,18 +27,19 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 - [x] Setup eslint
   - [x] eslint --init
 - [x] Setup testing script
-  - [x] "tests": "mocha -r tsnode/register 'tests/\**/*ts' || true"
+  - [x] "tests": "mocha -r ts-node/register 'tests/\**/*ts' || true"
 - [x] Setup github repository
   - [x] Setup .gitignore
 
 #### Cell Rules
 
 - [x] Setup a cell state object with DEAD or ALIVE properties
-- [] Setup a cell class
-  - [] Live cells with fewer than 2 live neighbors should die
-  - [] Live cells with 2 or 3 live neighbors should stay alive
-  - [] Live cells with more than 3 live neighbors should die
-  - [] Dead cells with exactly 3 live neighbors should come to life
+- [x] Setup a cell class
+  - [x] Live cells with fewer than 2 live neighbors should die
+    - [x] getNextState(numberOfNeighbors)
+  - [x] Live cells with 2 or 3 live neighbors should stay alive
+  - [x] Live cells with more than 3 live neighbors should die
+  - [x] Dead cells with exactly 3 live neighbors should come to life
 
 #### Game Rules
 

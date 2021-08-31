@@ -3,7 +3,7 @@ interface CellStateInterface {
   DEAD: number;
 }
 
-export const CellState: CellStateInterface = {
+export const cellState: CellStateInterface = {
   ALIVE: 1,
   DEAD: 0,
 };
