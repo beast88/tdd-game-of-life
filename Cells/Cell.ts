@@ -1,6 +1,11 @@
 import { cellState } from '../Cells/CellState';
 
-class Cell {
+export interface CellInterface {
+  state: number;
+  getNextState(neighbors: number): number;
+}
+
+export class Cell implements CellInterface {
   state: number;
 
   constructor(state: number) {
@@ -21,5 +26,3 @@ class Cell {
     }
   }
 }
-
-export default Cell;
