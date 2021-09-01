@@ -52,4 +52,12 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 
 #### Visuals
 
-- [] Create a new react app including typescript
+- [x] Create a new react app including typescript
+  - [x] npx create-react-app game-of-life --template typescript
+  - [x] clean up files
+- [x] Import game files into React
+- [] Header component
+  - [] Includes name of project
+  - [] Includes a link to github
+  - [] Has an about section
+- [] Main component

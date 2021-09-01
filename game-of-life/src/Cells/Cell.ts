@@ -1,4 +1,4 @@
-import { cellState } from '../Cells/CellState';
+import { cellState } from './CellState';
 
 export interface CellInterface {
   state: number;
@@ -25,7 +25,7 @@ export class Cell implements CellInterface {
       if (neighbors === 3) {
         return cellState.ALIVE;
       }
-      return this.state;
     }
+    return this.state;
   }
 }

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import { cellState } from '../Cells/CellState';
-import { Cell } from '../Cells/Cell';
-import Game from '../Game/Game';
+import { cellState } from '../game-of-life/src/Cells/CellState';
+import { Cell } from '../game-of-life/src/Cells/Cell';
+import Game from '../game-of-life/src/Game/Game';
 
 const state1 = [
   [cellState.DEAD, cellState.DEAD, cellState.DEAD],

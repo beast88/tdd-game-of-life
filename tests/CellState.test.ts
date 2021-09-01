@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { cellState } from '../Cells/CellState';
+import { cellState } from '../game-of-life/src/Cells/CellState';
 
 describe('CellState', () => {
   it('Should have an ALIVE state', () => {
