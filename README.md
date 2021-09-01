@@ -35,7 +35,7 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 
 - [x] Setup a cell state object with DEAD or ALIVE properties
 - [x] Setup a cell class
-- [] Cell should be initialised with a cellState
+- [x] Cell should be initialised with a cellState
   - [x] Live cells with fewer than 2 live neighbors should die
     - [x] getNextState(numberOfNeighbors)
   - [x] Live cells with 2 or 3 live neighbors should stay alive
@@ -49,3 +49,7 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 - [x] Retrieve a cell by column and row
 - [x] Get the number of live neighbors for a given cell
 - [x] Create the next state of the game
+
+#### Visuals
+
+- [] Create a new react app including typescript

@@ -9,6 +9,9 @@ export class Cell implements CellInterface {
   state: number;
 
   constructor(state: number) {
+    if (state !== cellState.ALIVE && state !== cellState.DEAD) {
+      throw new Error('Invalid State');
+    }
     this.state = state;
   }
 
