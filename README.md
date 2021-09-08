@@ -15,6 +15,7 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 - Typescript
 - Mocha - testing suite
 - Chai - assertion library
+- React
 
 ### Tasks
 
@@ -55,9 +56,21 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 - [x] Create a new react app including typescript
   - [x] npx create-react-app game-of-life --template typescript
   - [x] clean up files
+  - [] Setup build script
 - [x] Import game files into React
-- [] Header component
-  - [] Includes name of project
-  - [] Includes a link to github
-  - [] Has an about section
+- [x] Header component
+  - [x] Includes name of project
+  - [x] Includes a link to github (font awesome)
+  - [x] Has an about button (opens about page modal)
+- [x] About component
+  - [x] Modal
+  - [x] Has a button to close the modal
+  - [x] Has a brief description that explains a little about the project
+  - [x] Link to wiki
 - [] Main component
+  - [] Should render the game as a grid (a x a)
+    - [] Should store the game state in react state
+  - [] Should allow the user to select cells to turn to life
+  - [] Should have a button to run the simulation
+    - [] Simulation should call the game's nextState function and update the grid
+- [] Favicon (get a glider)
