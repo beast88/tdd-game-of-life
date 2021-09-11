@@ -66,3 +66,15 @@ a {
 .about-section p {
   margin: 10px 0 15px 0;
 }
+
+.game {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  outline: 1px solid black;
+}
