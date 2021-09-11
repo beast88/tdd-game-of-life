@@ -39,8 +39,8 @@ export default class Game {
     return result;
   }
 
-  nextState(): void {
-    this.state = this.state.map((row, rowNum) => {
+  nextState() {
+    return this.state.map((row, rowNum) => {
       return row.map((cell, colNum) => {
         return new Cell(
           cell.getNextState(this.getLiveNeighbors(rowNum, colNum))

@@ -63,6 +63,7 @@ const GameBoard: React.FC<Props> = (props) => {
           })}
         </tbody>
       </table>
+      <button>Start</button>
     </section>
   );
 };

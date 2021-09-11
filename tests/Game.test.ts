@@ -230,7 +230,6 @@ describe('Game of Life', () => {
     ];
 
     const game = new Game(gameState);
-    game.nextState();
 
     const expectedResult = [
       [
@@ -250,7 +249,7 @@ describe('Game of Life', () => {
       ],
     ];
 
-    expect(game.state).to.deep.equal(expectedResult);
+    expect(game.nextState()).to.deep.equal(expectedResult);
   });
 
   it('Should create the next state of the game (Blinker)', () => {
@@ -293,7 +292,6 @@ describe('Game of Life', () => {
     ];
 
     const game = new Game(gameState);
-    game.nextState();
 
     const expectedResult = [
       [
@@ -333,6 +331,6 @@ describe('Game of Life', () => {
       ],
     ];
 
-    expect(game.state).to.deep.equal(expectedResult);
+    expect(game.nextState()).to.deep.equal(expectedResult);
   });
 });
