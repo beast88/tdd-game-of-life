@@ -68,9 +68,10 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
   - [x] Has a brief description that explains a little about the project
   - [x] Link to wiki
 - [] Main component
-  - [] Should render the game as a grid (a x a)
-    - [] Should store the game state in react state
-  - [] Should allow the user to select cells to turn to life
+  - [x] Should render the game as a grid of dead cells (a x a)
+    - [x] Should store the game state in react state
+  - [x] Should allow the user to select cells to change life state
+    - [x] On click event
   - [] Should have a button to run the simulation
     - [] Simulation should call the game's nextState function and update the grid
 - [] Favicon (get a glider)
