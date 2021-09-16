@@ -3,14 +3,8 @@ import { Cell, CellInterface } from '../Cells/Cell';
 export default class Game {
   state: Array<Array<CellInterface>>;
 
-  constructor(state: Array<Array<number>>) {
-    this.state = state.map((row) =>
-      row.map((cellState) => new Cell(cellState))
-    );
-  }
-
-  getCell(row: number, column: number): CellInterface {
-    return this.state[row][column];
+  constructor(state: Array<Array<CellInterface>>) {
+    this.state = state;
   }
 
   getLiveNeighbors(row: number, column: number): number {
