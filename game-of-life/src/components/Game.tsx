@@ -1,44 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import Game from '../Game/Game';
 import { cellState } from '../Cells/CellState';
-import { CellInterface, Cell } from '../Cells/Cell';
 
 interface Props {
   number: number;
 }
 
 const GameBoard: React.FC<Props> = (props) => {
-  const [board, setBoard] = useState<Array<Array<CellInterface>> | undefined>();
+  const [game, setGame] = useState<Game>(new Game([[0]]));
+  const [isLive, setIsLive] = useState<boolean>(false);
 
   useEffect(() => {
     const grid = Array.from(Array(props.number), () =>
       Array(props.number).fill(cellState.DEAD)
     );
 
-    const game = new Game(grid);
-    setBoard(game.state);
+    const newGame = new Game(grid);
+    setGame(newGame);
   }, [props.number]);
 
   const changeCellState = (row: number, col: number) => {
-    const newGrid = board?.map((gridRow, rowNum) => {
+    const newGrid = game.state.map((gridRow, rowNum) => {
       return gridRow.map((cell, colNum) => {
         if (rowNum === row && colNum === col) {
-          return new Cell(
-            cell.state === cellState.DEAD ? cellState.ALIVE : cellState.DEAD
-          );
+          return cell.state === cellState.DEAD
+            ? cellState.ALIVE
+            : cellState.DEAD;
         }
-        return cell;
+        return cell.state === cellState.ALIVE
+          ? cellState.ALIVE
+          : cellState.DEAD;
       });
     });
 
-    setBoard(newGrid);
+    const newGame = new Game(newGrid);
+
+    setGame(newGame);
+  };
+
+  const handleStart = () => {
+    setIsLive(true);
+  };
+
+  const handleReset = () => {
+    setIsLive(false);
   };
 
   return (
     <section className="game">
       <table>
         <tbody>
-          {board?.map((row, rowNum) => {
+          {game.state.map((row, rowNum) => {
             return (
               <tr key={rowNum}>
                 {row.map((cell, colNum) => {
@@ -63,7 +75,25 @@ const GameBoard: React.FC<Props> = (props) => {
           })}
         </tbody>
       </table>
-      <button>Start</button>
+      {isLive ? (
+        <button
+          className="button"
+          onClick={() => {
+            handleReset();
+          }}
+        >
+          Reset
+        </button>
+      ) : (
+        <button
+          className="button"
+          onClick={() => {
+            handleStart();
+          }}
+        >
+          Start
+        </button>
+      )}
     </section>
   );
 };
