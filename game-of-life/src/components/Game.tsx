@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Game from '../Game/Game';
 import { cellState } from '../Cells/CellState';
+import { Cell } from '../Cells/Cell';
 
 interface Props {
   number: number;
 }
 
 const GameBoard: React.FC<Props> = (props) => {
-  const [game, setGame] = useState<Game>(new Game([[0]]));
+  const [game, setGame] = useState<Game>(
+    new Game([[new Cell(cellState.DEAD)]])
+  );
   const [isLive, setIsLive] = useState<boolean>(false);
+
+  const getNextGameState = () => {
+    const newState = game.nextState();
+    const next = new Game(newState);
+    setGame(next);
+  };
 
   useEffect(() => {
     const grid = Array.from(Array(props.number), () =>
@@ -19,17 +28,28 @@ const GameBoard: React.FC<Props> = (props) => {
     setGame(newGame);
   }, [props.number]);
 
+  let interval: any;
+
+  useEffect(() => {
+    if (isLive) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      interval = setTimeout(() => {
+        getNextGameState();
+      }, 1000);
+    }
+  }, [game, isLive]);
+
   const changeCellState = (row: number, col: number) => {
     const newGrid = game.state.map((gridRow, rowNum) => {
       return gridRow.map((cell, colNum) => {
         if (rowNum === row && colNum === col) {
           return cell.state === cellState.DEAD
-            ? cellState.ALIVE
-            : cellState.DEAD;
+            ? new Cell(cellState.ALIVE)
+            : new Cell(cellState.DEAD);
         }
         return cell.state === cellState.ALIVE
-          ? cellState.ALIVE
-          : cellState.DEAD;
+          ? new Cell(cellState.ALIVE)
+          : new Cell(cellState.DEAD);
       });
     });
 
@@ -40,10 +60,12 @@ const GameBoard: React.FC<Props> = (props) => {
 
   const handleStart = () => {
     setIsLive(true);
+    getNextGameState();
   };
 
-  const handleReset = () => {
+  const handleStop = () => {
     setIsLive(false);
+    clearTimeout(interval);
   };
 
   return (
@@ -64,9 +86,13 @@ const GameBoard: React.FC<Props> = (props) => {
                             ? 'black'
                             : 'transparent',
                       }}
-                      onClick={() => {
-                        changeCellState(rowNum, colNum);
-                      }}
+                      onClick={
+                        !isLive
+                          ? () => {
+                              changeCellState(rowNum, colNum);
+                            }
+                          : undefined
+                      }
                     ></td>
                   );
                 })}
@@ -79,10 +105,10 @@ const GameBoard: React.FC<Props> = (props) => {
         <button
           className="button"
           onClick={() => {
-            handleReset();
+            handleStop();
           }}
         >
-          Reset
+          Stop
         </button>
       ) : (
         <button
