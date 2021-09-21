@@ -35,7 +35,7 @@ const GameBoard: React.FC<Props> = (props) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       interval = setTimeout(() => {
         getNextGameState();
-      }, 1000);
+      }, 750);
     }
   }, [game, isLive]);
 

@@ -8,6 +8,8 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 
 [Wiki Article](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
+Enter the size of the grid you want displayed, click some cells to bring them to life and then start the simulation. At any time you can pause and change which cells are alive or dead.
+
 ## Development
 
 ### Technologies
@@ -16,6 +18,10 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 - Mocha - testing suite
 - Chai - assertion library
 - React
+
+### Notes
+
+This was a simple project I decided to build to introduce me to using typescript in the react environment. It was also a good opportunity for me to brush up on some TDD essentials.
 
 ### Tasks
 
@@ -31,6 +37,7 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
   - [x] "tests": "mocha -r ts-node/register 'tests/\**/*ts' || true"
 - [x] Setup github repository
   - [x] Setup .gitignore
+  - [] Setup build script
 
 #### Cell Rules
 
@@ -56,7 +63,6 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
 - [x] Create a new react app including typescript
   - [x] npx create-react-app game-of-life --template typescript
   - [x] clean up files
-  - [] Setup build script
 - [x] Import game files into React
 - [x] Header component
   - [x] Includes name of project
@@ -67,6 +73,9 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
   - [x] Has a button to close the modal
   - [x] Has a brief description that explains a little about the project
   - [x] Link to wiki
+- [x] Landing component
+  - [x] Should ask the user how big a grid to generate between 5 and 50 cells
+  - [x] Should have a button to submit response
 - [x] Main component
   - [x] Should render the game as a grid of dead cells (a x a)
     - [x] Should store the game state in react state
@@ -77,4 +86,4 @@ Rebuilding Conway's Game of Life using test driven development Typescript and Re
     - [x] Users should not be able to click cells when the simulation is active
   - [x] Should have a button to stop the simulation
     - [x] Simulation should stop and user should be able to toggle cells again
-- [] Favicon (get a glider)
+- [x] Favicon (get a glider)
