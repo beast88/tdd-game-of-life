@@ -37,7 +37,6 @@ This was a simple project I decided to build to introduce me to using typescript
   - [x] "tests": "mocha -r ts-node/register 'tests/\**/*ts' || true"
 - [x] Setup github repository
   - [x] Setup .gitignore
-  - [] Setup build script
 
 #### Cell Rules
 
